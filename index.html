@@ -3,18 +3,37 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" charset="utf-8"></script>
 
     <title>La casa del disco</title>
   </head>
 
   <body>
+    <nav><h2>LA CASA DEL DISCO</h2>
+    </nav>
+
+    <main>
+      <div id="discografia">
+        <!-- div  disc box che viene clonato col ciclo per ogni
+        elemento in album( album viene riempito da axios) -->
+        <div class="disc_box" v-for="element in albums">
+            <div class="cover">
+              <img :src="element.poster" alt="album cover">
+            </div>
+            <div class="title">{{element.title}}</div>
+            <div class="author">{{element.author}}</div>
+            <div class="year">{{element.year}}</div>
+        </div>
+      </div>
+
+    </main>
+
+     <script src="js/script.js" charset="utf-8"></script>
 
   </body>
-
-
-
-
 
 </html>

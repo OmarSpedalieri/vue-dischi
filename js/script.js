@@ -1,16 +1,29 @@
+//
+// Descrizione:
+// Facciamo una chiamata ajax all’api di boolean al seguente indirizzo.
+// https://flynn.boolean.careers/exercises/api/array/music
+// L’api ci restituirà una decina di dischi musicali che dovremo stampare a schermo con Vue.
+// Concentratevi sulla parte JS,
+// per la grafica avete come ref lo screeshot,
+// ma i dettagli lasciateli per la fine.
+const collection = "https://flynn.boolean.careers/exercises/api/array/music";
+
 var app = new Vue({
 
-  el: " ",
+  el: "#discografia",
   data:{
+    albums:[] // array vuoto che riempio interrogando l api con axios
+  },
+  mounted:function () {// mounted perchè viene generato all'inizio
 
-      },
-  mounted:function() {
-    // for (var i = 0; i < this.list_num; i++) {
-    //   axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-    //   .then( mail => {
-    //     let item = mail.data.response;
-    //     this.mail_list.includes(item) ? i-- : this.mail_list.push(item);
-    //   });
-    }
+    axios.get(collection).then(disc => {
+     this.albums = disc.data.response;
+     // console.log(disc);
+
+   })
   }
+
+
+
+
 });
