@@ -19,7 +19,7 @@
     <nav>
       <span class="pick">Pick your favourite style: </span>
       <select class="selection" name="" v-model="type" @change="genrePicker()">
-        <option value="all">ALL</option>
+        <option value="ll">ALL</option>
         <option value="Pop">POP</option>
         <option value="Rock">ROCK</option>
         <option value="Metal">METAL</option>
@@ -31,7 +31,7 @@
       <div id="discografia">
         <!-- div  disc box che viene clonato col ciclo per ogni
         elemento in album( album viene riempito da axios) -->
-        <div class="disc_box" v-for="element in albums">
+        <div class="disc_box" v-for="(element,index) in genreFilter">
             <div class="cover">
               <img :src="element.poster" alt="album cover">
             </div>
