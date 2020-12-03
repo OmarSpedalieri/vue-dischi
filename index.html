@@ -13,7 +13,18 @@
   </head>
 
   <body>
-    <nav><h2>LA CASA DEL DISCO</h2>
+    <header><h2>LA CASA DEL DISCO</h2>
+    </header>
+
+    <nav>
+      <span class="pick">Pick your favourite style: </span>
+      <select class="selection" name="" v-model="type" @change="genrePicker()">
+        <option value="all">ALL</option>
+        <option value="Pop">POP</option>
+        <option value="Rock">ROCK</option>
+        <option value="Metal">METAL</option>
+        <option value="Jazz">JAZZ</option>
+      </select>
     </nav>
 
     <main>
